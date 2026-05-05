@@ -10,6 +10,14 @@
 
 Este projeto implementa um pipeline de Engenharia de Dados completo para uma operação de e-commerce, utilizando a Arquitetura Medalhão. O objetivo é demonstrar o fluxo de dados desde a origem transacional até um ambiente analítico com suporte a transações ACID e governança.
 
+##  Documentação Completa
+
+Toda a arquitetura, modelagem de dados, diagramas ER e a explicação técnica detalhada das operações transacionais foram documentadas e publicadas utilizando o MkDocs.
+
+ **[Acesse a Documentação Pública do Projeto Aqui](https://naiiilr.github.io/ProjetoEngDeDados2/)**
+
+---
+
 ## Etapas do Pipeline
 
 O processamento é dividido em seis estágios principais para garantir a integridade e a rastreabilidade dos dados:
@@ -29,7 +37,7 @@ A infraestrutura é baseada no desacoplamento total entre o motor de processamen
 
 ```
 ┌─────────────────┐     ┌─────────────────┐     ┌──────────────────┐     ┌───────────────────┐
-│ Python (Pandas) │────▶│   SQL Server    │────▶│    MinIO (S3)    │────▶│    MinIO (S3)     │
+│ Python (Pandas) │ ──> │   SQL Server    │ ──> │    MinIO (S3)    │ ──> │    MinIO (S3)     │
 │                 │     │                 │     │                  │     │                   │
 │  Geração Local  │     │   2025 (OLTP)   │     │  landing-zone/   │     │     bronze/       │
 │  (Mock Data)    │     │  DB: Ecommerce  │     │  (CSVs brutos)   │     │  (Delta Tables)   │
