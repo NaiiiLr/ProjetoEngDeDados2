@@ -1,0 +1,21 @@
+site_name: Documentação - Data Lake E-commerce
+site_description: Arquitetura de Engenharia de Dados com Spark, Delta Lake e MinIO.
+site_author: Seu Nome
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: deep orange
+
+nav:
+  - Visão Geral: index.md
+  - Dicionário de Dados: dicionario.md
+  - Arquitetura: arquitetura.md
+  - Pipeline de Dados:
+    - Utilitário de Reset: pipeline/_reset_minio.md
+    - 00. Geração Mock: pipeline/00_generate_custom_data.md
+    - 01. Setup Origem: pipeline/01_setup_sqlserver.md
+    - 02. Ingestão Bronze: pipeline/02_sqlserver_to_minio_csv.md
+    - 03. Delta Lake: pipeline/03_csv_to_delta.md
+    - 04. Transações ACID: pipeline/04_dml_delta.md
